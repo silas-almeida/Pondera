@@ -11,7 +11,7 @@ class ToDoCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Card(
-      elevation: 12.0,
+      elevation: 3.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Stack(
         alignment: Alignment.center,
