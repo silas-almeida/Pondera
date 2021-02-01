@@ -7,14 +7,15 @@ class ToDoCard extends StatelessWidget {
   ToDoCard(this.text);
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Card(
       elevation: 12.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       color: CustomColors.customOrange,
       child: Stack(children: [
         Container(
-          height: 80,
-          width: 200,
+          height: size.height * 0.34,
+          width: size.width * 0.44,
           child: Center(
             child: Text(
               text,

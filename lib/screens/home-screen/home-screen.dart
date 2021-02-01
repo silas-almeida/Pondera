@@ -65,18 +65,30 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Container(
                     height: size.height * 0.32,
-                    child: ListView.separated(
-                      itemCount: 2,
-                      itemBuilder: (ctx, index) {
-                        return ToDoCard('Minhas Enquetes');
-                      },
-                      separatorBuilder: (ctx, index) {
-                        return SizedBox(
-                          width: 12,
-                        );
-                      },
-                      scrollDirection: Axis.horizontal,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ToDoCard('Minhas Enquetes'),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        ToDoCard('Meus Votos'),
+                      ],
                     ),
+                    // child: ListView.separated(
+                    //   padding: EdgeInsets.symmetric(horizontal: 20),
+                    //   itemCount: 2,
+                    //   itemBuilder: (ctx, index) {
+                    //     return ToDoCard('Minhas Enquetes');
+                    //   },
+                    //   separatorBuilder: (ctx, index) {
+                    //     return SizedBox(
+                    //       width: size.width * 0.03,
+                    //     );
+                    //   },
+                    //   scrollDirection: Axis.horizontal,
+                    // ),
                   ),
                   SizedBox(
                     height: size.height * 0.18,
