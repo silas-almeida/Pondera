@@ -69,11 +69,11 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        ToDoCard('Minhas Enquetes'),
+                        ToDoCard(text: 'Minhas Enquetes', imagePath: 'assets/images/undraw_election_day_w842.svg'),
                         const SizedBox(
                           width: 10,
                         ),
-                        ToDoCard('Meus Votos'),
+                        ToDoCard(text: 'Meus Votos', imagePath: 'assets/images/undraw_Finance_re_gnv2.svg'),
                       ],
                     ),
                     // child: ListView.separated(
