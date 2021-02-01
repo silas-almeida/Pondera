@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                 alignment: Alignment.center,
                 children: [
                   Container(
-                    height: size.height,
+                    height: (size.height - (size.height * 0.1)),
                     color: Colors.white,
                   ),
                   Positioned(
@@ -116,7 +116,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    bottom: 120,
+                    bottom: 30,
                     child: Material(
                       color: Colors.transparent,
                       child: GestureDetector(
