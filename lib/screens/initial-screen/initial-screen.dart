@@ -13,9 +13,12 @@ class _InitialScreenState extends State<InitialScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final pictureHeigh = size.height * 0.28;
+    final pictureWidth = pictureHeigh * 2;
+
     return Scaffold(
       body: Stack(
-        alignment: Alignment.center,
+        alignment: Alignment.topCenter,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -29,56 +32,58 @@ class _InitialScreenState extends State<InitialScreen> {
               ),
             ),
           ),
-          Positioned(
-            top: 80,
-            left: 20,
+          SafeArea(
             child: Container(
-              child: Text(
-                'Pondera',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 42,
+              height: size.height * 0.35,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      child: Text(
+                        'Pondera',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 42,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      child: Text(
+                        'Seja bem-vindo!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 24,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      width: size.width,
+                      child: Text(
+                        'Aqui sua opinião importa! Cadastre, compartilhe e participe de votações!',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          letterSpacing: 0.8,
+                          fontSize: 20,
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
           ),
           Positioned(
-            top: 160,
-            left: 20,
-            child: Container(
-              child: Text(
-                'Seja bem-vindo!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 240,
-            left: 20,
-            child: Container(
-              width: size.width,
-              child: Text(
-                'Aqui sua opinião importa! Cadastre, compartilhe e participe de votações!',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w700,
-                  letterSpacing: 0.8,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            top: 352,
+            bottom: size.height * 0.30,
             child: SvgPicture.asset(
               'assets/images/selecting_team.svg',
-              height: 200,
-              width: 100,
+              height: pictureHeigh,
+              width: pictureWidth,
               semanticsLabel: 'Inicial',
               alignment: Alignment.center,
               fit: BoxFit.cover,
@@ -94,7 +99,7 @@ class _InitialScreenState extends State<InitialScreen> {
               child: Container(
                 color: Colors.white,
                 width: size.width,
-                height: size.height * 0.35,
+                height: size.height * 0.30,
                 child: Card(
                   elevation: 8.0,
                   margin: EdgeInsets.zero,
@@ -110,7 +115,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           );
                         },
                         child: Container(
-                          height: 60,
+                          height: 50,
                           width: size.width * 0.80,
                           child: Center(
                             child: Text(
@@ -127,7 +132,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           primary: CustomColors.customOrange,
                           textStyle: TextStyle(
                               color: CustomColors.customOrange,
-                              fontSize: 24,
+                              fontSize: 20,
                               fontWeight: FontWeight.bold),
                         ),
                       ),
@@ -143,7 +148,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           );
                         },
                         child: Container(
-                          height: 60,
+                          height: 50,
                           width: size.width * 0.80,
                           child: Center(
                             child: Text(
@@ -160,7 +165,7 @@ class _InitialScreenState extends State<InitialScreen> {
                           primary: CustomColors.customOrange,
                           textStyle: TextStyle(
                             color: Colors.white,
-                            fontSize: 24,
+                            fontSize: 20,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
