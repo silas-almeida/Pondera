@@ -12,13 +12,13 @@ class ToDoCard extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     return Card(
       elevation: 3.0,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       child: Stack(
         alignment: Alignment.center,
         children: [
           ClipRRect(
             clipBehavior: Clip.antiAliasWithSaveLayer,
-            borderRadius: BorderRadius.circular(12),
+            borderRadius: BorderRadius.circular(20),
             child: Container(
               decoration: BoxDecoration(
                   gradient: LinearGradient(

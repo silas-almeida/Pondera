@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pondera/screens/home-screen/home-screen.dart';
+import 'package:pondera/screens/signup-screen.dart/signup-screen.dart';
 import 'package:pondera/utils/colors.dart';
 
 class InitialScreen extends StatefulWidget {
@@ -134,7 +135,13 @@ class _InitialScreenState extends State<InitialScreen> {
                         height: 10,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (ctx) => SignupScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 60,
                           width: size.width * 0.80,

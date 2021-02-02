@@ -29,6 +29,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   flutter_svg: ^0.19.2+1
+  flutter_signin_button: ^1.1.0
 
 dev_dependencies:
   flutter_test:
@@ -50,6 +51,7 @@ flutter:
     - assets/images/undraw_Finance_re_gnv2.svg
     - assets/images/undraw_election_day_w842.svg
     - assets/images/selecting_team.svg
+    - assets/images/freelancer.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

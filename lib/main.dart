@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:pondera/screens/home-screen/home-screen.dart';
 import 'package:pondera/screens/initial-screen/initial-screen.dart';
+import 'package:pondera/screens/signup-screen.dart/signup-screen.dart';
+import 'package:pondera/utils/materialColors.dart';
 
 
 void main() {
@@ -14,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Pondera',
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: CustomMaterialColors.materialBlueGrey,
+        accentColor: CustomMaterialColors.materialOrange,
       ),
       home: InitialScreen(),
     );
