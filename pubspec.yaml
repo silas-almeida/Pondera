@@ -49,6 +49,7 @@ flutter:
   assets:
     - assets/images/undraw_Finance_re_gnv2.svg
     - assets/images/undraw_election_day_w842.svg
+    - assets/images/selecting_team.svg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

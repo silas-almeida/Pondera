@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pondera/screens/home-screen/home-screen.dart';
+import 'package:pondera/screens/initial-screen/initial-screen.dart';
 
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: HomeScreen(),
+      home: InitialScreen(),
     );
   }
 }
