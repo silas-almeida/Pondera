@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.pondera">
+    package="com.grasi.pondera">
    <application
         android:label="pondera"
         android:icon="@mipmap/ic_launcher">

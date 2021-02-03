@@ -1,4 +1,4 @@
-package com.example.pondera
+package com.grasi.pondera
 
 import io.flutter.embedding.android.FlutterActivity
 
