@@ -10,6 +10,8 @@ class ToDoCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
+    final imageHeight = (size.height * 0.34) * 0.33;
+    final imageWidth = imageHeight * 2;
     return Card(
       elevation: 3.0,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -33,12 +35,12 @@ class ToDoCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 140,
+            top: (size.height * 0.34) * 0.55,
             child: SizedBox(
               child: SvgPicture.asset(
                 imagePath,
-                width: 200,
-                height: 100,
+                width: imageWidth,
+                height: imageHeight,
                 semanticsLabel: 'Resultados',
                 alignment: Alignment.center,
                 fit: BoxFit.cover,
@@ -46,7 +48,7 @@ class ToDoCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 180,
+            bottom: (size.height * 0.34) * 0.50,
             child: Text(
               text,
               style: TextStyle(

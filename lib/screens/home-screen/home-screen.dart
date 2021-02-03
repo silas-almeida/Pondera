@@ -64,6 +64,7 @@ class HomeScreen extends StatelessWidget {
                                     child: Text(
                                       'SA',
                                       style: TextStyle(
+                                          color: CustomColors.customBlueGrey,
                                           fontWeight: FontWeight.bold,
                                           fontSize: 32),
                                     ),
@@ -81,7 +82,6 @@ class HomeScreen extends StatelessWidget {
                                       decoration: TextDecoration.none),
                                 ),
                               ),
-                              SizedBox(),
                             ],
                           ),
                         ),
@@ -89,7 +89,7 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Positioned(
-                    top: 200,
+                    top: size.height * 0.26,
                     child: Column(
                       children: [
                         Container(
