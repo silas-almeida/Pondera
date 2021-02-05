@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pondera/models/classes/user.dart';
-import 'package:pondera/screens/signup-screen.dart/components/signup-form.dart';
+import 'package:pondera/screens/signin-screen/components/signin-form.dart';
 import 'package:pondera/utils/colors.dart';
 
-class SignupScreen extends StatelessWidget {
+class SigninScreen extends StatelessWidget {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
   final PonderaUser user = PonderaUser();
@@ -26,8 +26,8 @@ class SignupScreen extends StatelessWidget {
                     begin: Alignment.topCenter,
                     end: Alignment.bottomCenter,
                     colors: [
-                  CustomColors.customPink,
                   CustomColors.customOrange,
+                  CustomColors.customPink,
                 ])),
           ),
           CustomScrollView(
@@ -39,7 +39,7 @@ class SignupScreen extends StatelessWidget {
                 elevation: 0.0,
                 flexibleSpace: FlexibleSpaceBar(
                   title: const Text(
-                    'Cadastro',
+                    'Login',
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 24,
@@ -57,11 +57,11 @@ class SignupScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       Container(
-                        height: 588,
+                        height: 584,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [
-                            SignUpForm(formKey: formKey, user: user),
+                            SignInForm(formKey: formKey, user: user),
                             Positioned(
                               top: 0,
                               child: SvgPicture.asset(

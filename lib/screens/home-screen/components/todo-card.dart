@@ -55,7 +55,7 @@ class ToDoCard extends StatelessWidget {
               style: TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w800,
-                  fontSize: 20),
+                  fontSize: 18),
             ),
           ),
         ],

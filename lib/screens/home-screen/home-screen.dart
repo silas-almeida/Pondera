@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:pondera/models/providers/user-provider.dart';
 import 'package:pondera/screens/home-screen/components/todo-card.dart';
 import 'package:pondera/screens/my-elections-screen/my-elections-screen.dart';
 import 'package:pondera/utils/colors.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -29,6 +31,20 @@ class HomeScreen extends StatelessWidget {
                   ),
                   centerTitle: true,
                 ),
+                actions: [
+                  TextButton.icon(
+                      onPressed: () {
+                        context.read<UserProvider>().signOut();
+                      },
+                      icon: Icon(
+                        Icons.logout,
+                        color: Colors.white,
+                      ),
+                      label: Text(
+                        'Sair',
+                        style: TextStyle(color: Colors.white),
+                      )),
+                ],
               ),
               SliverToBoxAdapter(
                 child: Stack(

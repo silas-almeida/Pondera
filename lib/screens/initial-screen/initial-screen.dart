@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:pondera/screens/home-screen/home-screen.dart';
+import 'package:pondera/screens/signin-screen/signin-screen.dart';
 import 'package:pondera/screens/signup-screen.dart/signup-screen.dart';
 import 'package:pondera/utils/colors.dart';
 
@@ -110,7 +110,7 @@ class _InitialScreenState extends State<InitialScreen> {
                         onPressed: () {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (ctx) => HomeScreen(),
+                              builder: (ctx) => SigninScreen(),
                             ),
                           );
                         },
