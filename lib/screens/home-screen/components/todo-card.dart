@@ -5,8 +5,9 @@ import 'package:pondera/utils/colors.dart';
 class ToDoCard extends StatelessWidget {
   final String text;
   final String imagePath;
+  final Function onTap;
 
-  ToDoCard({this.text, this.imagePath});
+  ToDoCard({this.text, this.imagePath, this.onTap});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
