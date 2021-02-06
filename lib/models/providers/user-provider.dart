@@ -22,7 +22,7 @@ class UserProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void _loadCurrentUser({User firebaseUser}) async {
+  Future<void> _loadCurrentUser({User firebaseUser}) async {
     final User currentUser = firebaseUser ?? auth.currentUser;
     if (currentUser != null) {
       loading = true;
@@ -31,8 +31,6 @@ class UserProvider with ChangeNotifier {
       this.user = PonderaUser.fromDocument(docUser);
       this.firebaseUser = currentUser;
       loading = false;
-    } else {
-      print('Current user nulo');
     }
     notifyListeners();
   }
@@ -61,9 +59,12 @@ class UserProvider with ChangeNotifier {
       final result = await auth.signInWithEmailAndPassword(
           email: user.email, password: user.password);
       user.id = result.user.uid;
-      _loadCurrentUser(firebaseUser: result.user);
+      await _loadCurrentUser(firebaseUser: result.user);
       onSuccess();
-    } on PlatformException catch (error) {
+    } catch (error) {
+      print('Entrou aqui');
+      print(error.message);
+      print('código: ${error.code}');
       onFail(getErrorString(error.code));
     }
     loading = false;

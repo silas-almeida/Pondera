@@ -57,7 +57,7 @@ class SigninScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       Container(
-                        height: 584,
+                        height: 632,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [

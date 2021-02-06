@@ -57,7 +57,7 @@ class SignupScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     children: [
                       Container(
-                        height: 588,
+                        height: 680,
                         child: Stack(
                           alignment: Alignment.center,
                           children: [

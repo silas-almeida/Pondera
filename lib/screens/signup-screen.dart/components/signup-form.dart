@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pondera/helpers/validators.dart';
 import 'package:pondera/models/classes/user.dart';
 import 'package:pondera/models/providers/user-provider.dart';
 import 'package:pondera/utils/colors.dart';
@@ -16,6 +17,8 @@ class SignUpForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final TextEditingController passController = TextEditingController();
+    final TextEditingController confPassController = TextEditingController();
     return Form(
       key: formKey,
       child: Consumer<UserProvider>(
@@ -32,6 +35,12 @@ class SignUpForm extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: 'E-mail',
                       ),
+                      validator: (email) {
+                        if (!emailValid(email)) {
+                          return 'E-mail inválido';
+                        }
+                        return null;
+                      },
                       onSaved: (email) {
                         user.email = email;
                       },
@@ -40,19 +49,39 @@ class SignUpForm extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: 'Nome',
                       ),
+                      validator: (name) {
+                        if (name.length < 3) {
+                          return 'Nome muito curto';
+                        }
+                        return null;
+                      },
                       onSaved: (name) {
                         user.name = name;
                       },
                     ),
                     TextFormField(
+                      controller: passController,
                       decoration: InputDecoration(labelText: 'Senha'),
+                      validator: (pass) {
+                        if (pass.length < 6) {
+                          return 'Senha muito curta';
+                        }
+                        return null;
+                      },
                       onSaved: (password) {
                         user.password = password;
                       },
                     ),
                     TextFormField(
+                      controller: confPassController,
                       decoration:
                           InputDecoration(labelText: 'Confirme a senha'),
+                      validator: (cpass) {
+                        if (cpass != passController.text) {
+                          return 'senhas não conferem';
+                        }
+                        return null;
+                      },
                       onSaved: (confirmPassword) {
                         user.confirmPassword = confirmPassword;
                       },
@@ -83,7 +112,7 @@ class SignUpForm extends StatelessWidget {
                                       Navigator.of(context).pop();
                                     },
                                     onFail: (error) {
-                                      ScaffoldMessengerState().showSnackBar(
+                                      ScaffoldMessenger.of(context).showSnackBar(
                                         SnackBar(
                                           content: Text(
                                               'Falha ao cadastrar: $error'),

@@ -38,6 +38,18 @@ class PonderaUser {
     saveData();
   }
 
+  String getInitials() {
+    if (name.isNotEmpty) {
+      String initials = '';
+      final splitedName = name.split(' ');
+      for (final fractionName in splitedName) {
+        initials = initials + fractionName[0];
+      }
+      return initials.toUpperCase();
+    }
+    return null;
+  }
+
   // Future<void> saveToken() async {
   //   final String token = await FirebaseMessaging().getToken();
   //   tokensReference.document(token).setData({

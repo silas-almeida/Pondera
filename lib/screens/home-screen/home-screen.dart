@@ -9,6 +9,7 @@ import 'package:provider/provider.dart';
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final UserProvider userProvider = context.watch<UserProvider>();
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
@@ -80,7 +81,7 @@ class HomeScreen extends StatelessWidget {
                                     radius: 50,
                                     child: Center(
                                       child: Text(
-                                        'SA',
+                                        userProvider.user.getInitials(),
                                         style: TextStyle(
                                             color: CustomColors.customBlueGrey,
                                             fontWeight: FontWeight.bold,
@@ -93,7 +94,7 @@ class HomeScreen extends StatelessWidget {
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 20),
                                   child: Text(
-                                    'Olá, Silas Almeida!',
+                                    'Olá, ${userProvider.user.name}!',
                                     style: TextStyle(
                                         fontSize: 24,
                                         color: Colors.white,

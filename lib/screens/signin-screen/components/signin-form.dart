@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/button_list.dart';
 import 'package:flutter_signin_button/button_view.dart';
+import 'package:pondera/helpers/validators.dart';
 import 'package:pondera/models/classes/user.dart';
 import 'package:pondera/models/providers/user-provider.dart';
-import 'package:pondera/screens/home-screen/home-screen.dart';
-import 'package:pondera/screens/initial-screen/isLogged.dart';
 import 'package:pondera/utils/colors.dart';
 import 'package:provider/provider.dart';
 
@@ -31,6 +30,7 @@ class SignInForm extends StatelessWidget {
                 padding: EdgeInsets.all(12.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     TextFormField(
                       enabled: !userProvider.loading,
@@ -40,6 +40,12 @@ class SignInForm extends StatelessWidget {
                       decoration: InputDecoration(
                         labelText: 'E-mail',
                       ),
+                      validator: (email) {
+                        if (!emailValid(email)) {
+                          return 'E-mail inválido';
+                        }
+                        return null;
+                      },
                       keyboardType: TextInputType.emailAddress,
                       textCapitalization: TextCapitalization.none,
                       onSaved: (email) {
@@ -49,6 +55,12 @@ class SignInForm extends StatelessWidget {
                     TextFormField(
                       enabled: !userProvider.loading,
                       decoration: InputDecoration(labelText: 'Senha'),
+                      validator: (txt) {
+                        if (txt.length < 6) {
+                          return 'Senha inválida';
+                        }
+                        return null;
+                      },
                       obscureText: true,
                       onSaved: (password) {
                         user.password = password;
@@ -63,15 +75,15 @@ class SignInForm extends StatelessWidget {
                           : () {
                               if (formKey.currentState.validate()) {
                                 formKey.currentState.save();
-                                print(user.email);
-                                print(user.password);
+
                                 userProvider.signIn(
                                     user: user,
                                     onSuccess: () {
                                       Navigator.of(context).pop();
                                     },
-                                    onFail: (error) {
-                                      ScaffoldMessengerState().showSnackBar(
+                                    onFail: (String error) {
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
                                         SnackBar(
                                           content:
                                               Text('Falha ao logar: $error'),
